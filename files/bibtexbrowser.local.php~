@@ -1,0 +1,5 @@
+<?php
+  include('IEEEStyleForBibtexbrowserAE.php');
+  define('BIBLIOGRAPHYSTYLE','IEEEStyle');
+?>
+ 
