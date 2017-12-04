@@ -21,34 +21,14 @@
 	<link rel="shortcut icon" href="http://aeriksson.net/images/qut_icon.png"/>
 	<script src="https://www.w3schools.com/lib/w3.js"></script>
 	
-    <script>
-		$(function() {
-		  $("#Fontselector").on("change",function() {
-		    var font = $("#Fontselector option:selected").text();
-		    console.log(font);
-		
-		    $('.title.fonters').each(function() {
-		    	$(this).css("font-family",font);
-		    });
-		  }); 
-		});   
-		function reset() {
-			$("select").each(function () {
-			  localStorage.setItem($(this).attr("id"),"");
-			  $(this).val("");
-			}); 
-			$("#searchbar").val("");
-			$("#searchbar").trigger('change');
-		}
-    </script>
-    
+  
     <!-- Latest compiled and minified CSS -->
 <!--         <link rel="stylesheet" href="https://aeriksson.net/css/bootstrap.min.css"> -->
 
     <style>
 	    html,body,span,h1 {
 			font-family: "Open Sans Condensed", sans-serif;
-	    	font-size: 27px;
+	    	font-size: 17px;
 	    }
 		body,td,th {
 			font-family: "Open Sans Condensed", sans-serif; 
@@ -113,6 +93,9 @@
 		h1,h2,h3,h4,h5,h6 {
 		font-family: "Open Sans Condensed", sans-serif;
 		}
+		h4{
+			font-weight: bold;
+		}
 		p, h3 {
 			font-size: 17px;
 			line-height: 1.5em;
@@ -160,6 +143,7 @@
 				}
 
 
+				
 	    bibtex { display: none; }
 	    .searchbar { margin-left:0px;}
 	    #bibtex_errors { margin-top:10px; color: red;}
@@ -226,13 +210,173 @@ Email:
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 
 
+ <!-- ################# NEWS ################# -->
+<hr>
+<p class="Subtitle"><a name="News" id="News"></a>News</p>
+<p>
+<ul>
+<li>
+ARC Future Fellowship 2017-2021
+</li>
+<li>
+CVPR 2017 Workshop Paper Accepted
+</li>
+<li>
+ARC Discovery Project 2017-2020
+</li>
+<li>
+ECCV 2016 Outstanding Reviewer Award
+</li>
+<li>
+2 CVPR 2016 papers accepted 
+</li>
+<li>
+Best Paper Runner Up - CVPR 2015.
+</li>
+</ul>
+
+</p>
+
+
+ <!-- ################# ABOUT #################-->
+<hr>
+<p class="Subtitle"><a name="About" id="About"></a>About</p>
+<p>
+I am an ARC Future Fellow and former ARC DECRA and Vice Chancellor's Research Fellow at the School of Electrical Engineering and Computer Science at Queensland University of <br>
+Technology and a member of the Robotics and Autonomous Systems discipline and the Australian Centre for Robotic Vision. My research area include optimization theory and <br>
+numerical methods applied to the fields of Computer Vision and Machine Learning.
+</p>
+<br>
+
+ <!-- ################# PhD Recruitment #################-->
+<hr>
+<p class="Subtitle"><a name="PhDrec" id="PhDrec"></a>Prospective PhD Students</p>
+
+<p>
+  I am actively recruiting PhD candidates. I currently have a fully funded  PhD position in
+  optimization and computer vision starting in 2017.
+</p>
+
+<p>
+  There are a number of scholarships offered by Queensland University of Technology and the Australian Government. These are 
+  available to both domestic and international students. More information can be found 
+  <a href="https://www.qut.edu.au/study/applying/phd-and-research-degree-applications">here</a>. 
+  </p>
+  
+  <p>
+  If you are interested in any of these opportunities then send me an email with your CV, your research interests and any publications you might have.  
+  </p>
+<br>
+
+ <!-- ################# Teaching #################-->
+<hr>
+<p class="Subtitle"><a name="Teaching" id="Teaching"></a>Teaching</p>
+
+<ul>
+<p>
+<h4>2014</h4>
+COMP SCI 3420/4402 Introduction to Geometric Algorithms <br>
+COMP SCI 3007/7059 Artificial Intelligence <br>
+</p>
+
+<p>
+<h4>2013</h4>
+COMP SCI 4022/7022 Computer Vision<br>
+COMP SCI 4401 Introduction to Statistical Machine Learning<br>
+COMP SCI 1102 Object Oriented Programming<br>
+</p>
+
+<p>
+<h4>2012</h4>
+COMP SCI 4022/7022 Computer Vision
+</p>
+
+<p>
+<h4>2011</h4>
+COMP SCI 4022/7022 Computer Vision
+</p>
+<br>
+
+</ul>
+
+
+ <!-- ################# Research Grants #################-->
+<hr>
+<p class="Subtitle"><a name="Grants" id="Grants"></a>Research Grants</p>
+<p>
+<ul>
+
+<li>
+<b>ARC Future Fellow </b><br>
+Australian Research Council<br>
+The Role of Strong Duality in Computer Vision<br>
+Sole Chief Investigator<br>
+Project duration: 2017-2021<br>
+Total budget: $808,140<br>
+</li>
+<br>
+<li>
+<b>ARC Discovery Project </b><br>
+Australian Research Council<br>
+One shot three-dimensional reconstruction of human anatomy and motion<br>
+Chief Investigator<br>
+Project duration: 2017-2020<br>
+Total budget: $410,500<br>
+</li>
+<br>
+<li>
+<b>Vice-Chancellor's Research Fellowship</b><br>
+Queensland University of Technology<br>
+Sole Chief Investigator<br>
+Project duration: 2016-2019<br>
+</li>
+<br>
+<li>
+<b>ARC Discovery Early Career Researcher Award - DECRA </b><br>
+Australian Research Council<br>
+Distributed Large-Scale Optimization Methods in Computer Vision<br>
+Sole Chief Investigator<br>
+Project duration: 2013-2016<br>
+Total budget: $375,000<br>
+</li>
+<br>
+<!--<li>	
+<b>Data to Decisions</b><br>
+Cooperative Research Centre<br>
+Chief Investigator<br>
+Project duration: 2014-2019<br>
+Total budget: $25,000,000
+</li> 
+<br>-->
+<li>
+<b>Centre of Excellence in Robotic Vision</b><br>
+Australian Research Council<br>
+Associate Investigator<br>
+Project duration: 2014-2021<br>
+Total budget: $19,000,000<br>
+</li>
+<br>
+<li>
+<b>ARC Linkage Project</b><br>
+Australian Research Council<br>
+Semantic Change Detection Through Large-Scale Learning<br>
+Chief Investigator<br>
+Project duration: 2013-2015<br>
+Total budget: $485,000<br>
+</li>
+<br>
+</ul>
 
 
 
+<!-- ################# PUBLICATIONS ################# -->
 
+
+<hr>
+<p class="Subtitle"><a name="publications" id="Publications"></a>Selected Publications</p>
 
 <div class="bibtex_structure">
-  <div class="group year" extra="ASC number">
+  <div class="sort year" extra="ASC number">
   	  <a href="#top" style="display: inline"><em>(Top of the page)</em></a>
   	  <div style="padding-bottom:10px;"></div>
   	  <div class="sort journal" extra="DESC string">
@@ -244,8 +388,8 @@ Email:
 <div id="bibtex_display">
 
   <div class="if bibtex_template" style="display: none;">
-    <ul> <li>
-      <span class="if journal !nolink">
+    <ul> 
+<!--       <span class="if journal !nolink">
         <a class="bibtexVar" href="http://www.cs.cmu.edu/~mmv/papers/+BIBTEXKEY+.pdf" extra="BIBTEXKEY">
             <span style="text-decoration: underline;" class="title"></span>,
         </a>
@@ -253,10 +397,17 @@ Email:
       <span class="if title nolink">
             <span class="title"></span>,
       </span>
+ -->
+      <span class="if title">
+            <b><span class="title"></span></b>,
+      </span>
+
+	  
       <div class="if author">
         <span class="author"></span>
       </div>
       <div>
+		<span class="if school"><em><span class="series"></span>, <span class="school"></span></em>,</span>
         <span class="if journal"><em><span class="journal"></span></em>,</span>
         <span class="if booktitle">In <em><span class="booktitle"></span></em>,</span>
         <span class="if editor"><span class="editor"></span> (editors),</span>
@@ -270,20 +421,51 @@ Email:
         <span class="if month"><span class="month"></span>,</span>
         <span class="if year"><span class="year"></span>.</span>
         <span class="if note"><span class="note"></span>.</span>
-        <a class="bibtexVar" role="button" data-toggle="collapse" href="#bib+BIBTEXKEY+" aria-expanded="false" aria-controls="bib+BIBTEXKEY+" extra="BIBTEXKEY">
+		<span class="if journal !nolink">
+        <a class="bibtexVar" href="http://aeriksson.net/papers/+BIBTEXKEY+.pdf" extra="BIBTEXKEY" style="margin-left: 10px" >
+            [pdf] 
+        </a>
+        <a class="bibtexVar" role="button" data-toggle="collapse" href="#bib+BIBTEXKEY+" aria-expanded="false" aria-controls="bib+BIBTEXKEY+" extra="BIBTEXKEY" >
 		  [bib]
 		</a>
       </div>
-      <div class="bibtexVar collapse" id="bib+BIBTEXKEY+" extra="BIBTEXKEY">
-		  <div class="well">
+      <div class="bibtexVar collapse" id="bib+BIBTEXKEY+" extra="BIBTEXKEY" >  
+		  <div class="well" style="border: 0px white;background-color:white; width: 800px" >  
 		    <pre><span class="bibtexraw noread"></span></pre>
 		  </div>
 	  </div>
 	  <div style="display:none"><span class="bibtextype"></span></div>
-    </li></ul>
+      </span>
+    <ul>
   </div>
   
 </div>
+
+
+
+<br>
+ <!-- ################# BIO #################-->
+<hr>
+<p class="Subtitle"><a name="Bio" id="Bio"></a>Bio</p>
+<p>
+Dr Eriksson is an Australian Research Council Future Fellow and a Senior Research Associate at the School of Electrical Engineering and Computer Science, Queensland University of <br>
+Technology. He received his Masters of Science degree in Electrical Engineering in 2000 and his PhD in Mathematics in 2008 from Lund University, Sweden. His research areas include <br>
+optimisation theory and numerical methods applied to the fields of computer vision and machine learning. In 2010 his work on robust low-rank matrix approximation won the best paper <br>
+award at the 23rd IEEE Conference on Computer Vision and Pattern Recognition, San Francisco, USA.
+</p>
+<br>
+<hr>
+<p>
+<br>
+<br>
+© Anders Eriksson. Template by Yaser Sheikh.
+<br>
+</p>
+ 
+
+
+
+
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
