@@ -14,7 +14,8 @@ box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:en
 html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px);scroll-behavior:smooth}
 body{margin:0;background:var(--ink);color:var(--paper);font-family:'Inter',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
-.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+.wrap{max-width:none;margin:0;padding:0 48px}
+@media (max-width:640px){.wrap{padding:0 24px}}
 nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:rgba(20,21,26,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
 .logo{display:flex;align-items:center;gap:12px;font:700 20px 'Space Grotesk',sans-serif}
@@ -42,8 +43,8 @@ h2{font:600 clamp(30px,4.5vw,46px)/1.1 'Space Grotesk',sans-serif;letter-spacing
 .card i{display:block;font:500 13px 'Space Grotesk',sans-serif;font-style:normal;letter-spacing:.12em;color:var(--accent);margin-bottom:14px}
 .card h3{font:600 22px 'Space Grotesk',sans-serif;margin:0 0 10px}
 .card p{margin:0;color:var(--muted);font-size:16px}
-.band{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center}
-.band h2{margin:0 auto 16px}.band .lead{margin:0 auto 32px}
+.band{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:left}
+.band h2{margin:0 0 16px}.band .lead{margin:0 0 32px}
 footer{padding:36px 0;color:var(--muted);font-size:14px}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 @media (max-width:640px){nav .links a:not(.btn){display:none}section{padding:64px 0}}
