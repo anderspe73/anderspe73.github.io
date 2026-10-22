@@ -32,7 +32,7 @@ nav .btn{padding:9px 16px;font-size:14px}
 .hero::after{content:none}
 .hero .wrap{position:relative;z-index:1;padding-top:80px;padding-bottom:120px}
 .eyebrow{font:500 13px 'Space Grotesk',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin:0 0 20px}
-h1{font:600 clamp(44px,8vw,96px)/1.02 'Space Grotesk',sans-serif;letter-spacing:-.03em;margin:0 0 22px;text-shadow:0 2px 24px rgba(0,0,0,.5)}
+h1{font:600 clamp(40px,6.4vw,80px)/1.02 'Space Grotesk',sans-serif;letter-spacing:-.03em;margin:0 0 22px;text-shadow:0 2px 24px rgba(0,0,0,.5)}
 .sub{font-size:clamp(17px,2.2vw,22px);color:#C5D0DD;max-width:34em;margin:0 0 36px}
 @media (min-width:900px){.sub{max-width:none;white-space:nowrap;font-size:clamp(17px,1.9vw,22px)}body h2{max-width:none;white-space:nowrap;font-size:clamp(26px,2.8vw,40px)}#what .lead{max-width:62em}}
 .cta{display:flex;gap:14px;flex-wrap:wrap}
@@ -64,6 +64,17 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .email{display:inline-block;font:500 clamp(16px,2vw,20px)/1.2 'Space Grotesk',sans-serif;letter-spacing:-.01em;color:var(--paper);padding-bottom:4px;border-bottom:1.5px solid var(--accent);transition:color .15s}
 .email:hover{color:var(--accent)}
 .em{color:var(--paper);text-decoration:underline;text-decoration-color:var(--accent);text-decoration-thickness:2px;text-underline-offset:7px}
+.rot{display:inline-block;position:relative;overflow:hidden;vertical-align:top;height:1.18em;margin-bottom:-.16em;transition:width .7s cubic-bezier(.65,0,.35,1)}
+.rot .w{position:absolute;left:0;top:0;line-height:1.02;white-space:nowrap;opacity:0;transform:translateY(70%);transition:transform .7s cubic-bezier(.65,0,.35,1),opacity .5s ease}
+.rot .w.on{opacity:1;transform:none}
+.rot .w.out{opacity:0;transform:translateY(-70%)}
+.rot .t{position:relative;display:inline-block}
+.rot .t::after{content:"";position:absolute;left:0;right:.03em;top:1.09em;height:.035em;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .7s cubic-bezier(.65,0,.35,1)}
+.rot .w.last.on .t::after{transform:scaleX(1);transition-delay:.55s}
+.rot:not(.js) .w:first-child{position:relative;opacity:1;transform:none}
+.rot:not(.js) .w:not(:first-child){display:none}
+@media (min-width:761px){h1{white-space:nowrap}}
+@media (max-width:760px){.rot{display:block}}
 </style>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' rx='26' fill='%230B1F3A'/%3E%3Ccircle cx='60' cy='60' r='44' fill='none' stroke='%23F3F5F7' stroke-width='6'/%3E%3Cpath d='M60 30 L78 84 L60 72 L42 84 Z' fill='%23F3F5F7'/%3E%3Ccircle cx='88' cy='32' r='8' fill='%23FF6B2C'/%3E%3C/svg%3E">
 </head>
@@ -75,7 +86,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 <header class="hero" id="top"><canvas id="heroFx" aria-hidden="true"></canvas><div class="wrap">
   <p class="eyebrow">Radial Labs</p>
-  <h1>Navigation, by sight.</h1>
+  <h1 aria-label="Navigation, by sight."><span class="rot" aria-hidden="true"><span class="w on"><span class="t">Navigation</span>,</span><span class="w"><span class="t">Mapping</span>,</span><span class="w"><span class="t">Tracking</span>,</span><span class="w"><span class="t">Targeting</span>,</span><span class="w"><span class="t">Avoidance</span>,</span><span class="w"><span class="t">Guidance</span>,</span><span class="w"><span class="t">Awareness</span>,</span><span class="w"><span class="t">Understanding</span>,</span><span class="w last"><span class="t">Intelligence</span>,</span></span> by sight.</h1>
   <p class="sub">Accurate, efficient and instantaneous <span class="em">Spatial Intelligence</span> from ground to orbit.</p>
   
 </div></header>
@@ -151,6 +162,30 @@ function run(){cancelAnimationFrame(raf);raf=requestAnimationFrame(frame);}
 size(); run();
 window.addEventListener('resize',function(){size();if(reduce)run();});
 if('IntersectionObserver' in window){new IntersectionObserver(function(e){visible=e[0].isIntersecting;if(visible&&!reduce)run();}).observe(cv);}
+})();
+</script>
+<script>
+(function(){
+var r=document.querySelector('.rot'); if(!r) return;
+var ws=[].slice.call(r.querySelectorAll('.w'));
+if(ws.length<2||(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)) return;
+r.classList.add('js');
+var i=0;
+function wid(k){return ws[k].offsetWidth;}
+function fit(){r.style.transition='none';r.style.width=wid(i)+'px';void r.offsetWidth;r.style.transition='';}
+fit();
+if(document.fonts&&document.fonts.ready) document.fonts.ready.then(fit);
+window.addEventListener('resize',fit);
+function step(){
+  if(!document.hidden){
+    var prev=ws[i]; i=(i+1)%ws.length; var next=ws[i];
+    prev.classList.remove('on'); prev.classList.add('out'); next.classList.add('on');
+    r.style.width=wid(i)+'px';
+    setTimeout(function(){prev.classList.remove('out');},800);
+  }
+  setTimeout(step,ws[i].classList.contains('last')?4800:2600);
+}
+setTimeout(step,2600);
 })();
 </script>
 </body>
